@@ -1,0 +1,31 @@
+class Solution(object):
+
+    def isRoot(self, word,substr):
+        i=0
+        if(len(word)>len(substr)):
+            return False
+        for letter in word:
+            if(letter != substr[i]):
+                return False
+            i+=1
+        return True
+
+    def replaceWords(self, dictionary, sentence):
+        """
+        :type dictionary: List[str]
+        :type sentence: str
+        :rtype: str
+        """
+        words = []
+        new_string = ""
+        sentence=sentence.split(" ")
+        for substr in sentence:
+            words.append(substr)
+            for word in dictionary:
+                if(self.isRoot(word,substr)):
+                    words.append(word)
+            new_string +=(min(words)+' ')
+            words = []
+        return new_string[:-1]
+
+        
