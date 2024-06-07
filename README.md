@@ -1,2 +1,2 @@
-# leetcode-problems-solution
-My Solutions for leetcode problems - https://leetcode.com/problemset/
+# leetcode-profile
+https://leetcode.com/u/Dhaks13/
