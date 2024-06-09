@@ -1,0 +1,13 @@
+class Solution(object):
+    def subarraysDivByK(self, nums, k):
+        rsum = 0
+        count = 0
+        modmap = {0: 1}
+        for i in range(len(nums)):
+            rsum = (rsum + nums[i]) % k
+            if(rsum in modmap):
+                count += modmap[rsum]
+                modmap[rsum] += 1
+            else:
+                modmap[rsum] = 1
+        return count
